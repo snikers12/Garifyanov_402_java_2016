@@ -38,10 +38,6 @@ public class ItemsDaoTsvBasedImpl implements ItemsDao{
         }
     }
 
-    public static void main(String[] args) {
-
-    }
-
     public void delete(String itemName) {
         List<String[]> stores;
         stores = parseFile();

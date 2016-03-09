@@ -22,5 +22,9 @@ public class StoreServiceImpl implements StoreService {
         log.info(itemName + " was selected.");
         return itemsDao.select(itemName) != null;
     }
+//
+//    public static void main(String[] args) {
+//        StoreServiceImpl storeService = new StoreServiceImpl();
+//    }
 }
 

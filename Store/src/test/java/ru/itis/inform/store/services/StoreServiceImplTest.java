@@ -8,8 +8,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import ru.itis.inform.store.dao.ItemsDao;
 import ru.itis.inform.store.dao.models.Item;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 

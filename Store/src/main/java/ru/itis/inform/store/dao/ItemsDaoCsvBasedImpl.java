@@ -7,7 +7,11 @@ import java.io.*;
 import java.util.*;
 
 public class ItemsDaoCsvBasedImpl implements ItemsDao{
-    static File file = new File("D:/code/new.csv");
+    static File file;
+
+    public ItemsDaoCsvBasedImpl(File csvFilePath) {
+        file = csvFilePath;
+    }
 
     public static List<String[]> parseFile(){
         CsvParserSettings settings = new CsvParserSettings();
@@ -20,7 +24,6 @@ public class ItemsDaoCsvBasedImpl implements ItemsDao{
         catch (FileNotFoundException e){
             throw new IllegalStateException();
         }
-        System.out.println(allRows);
         return allRows;
     }
 

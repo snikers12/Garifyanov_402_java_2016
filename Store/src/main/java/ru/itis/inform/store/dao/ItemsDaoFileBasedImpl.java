@@ -6,6 +6,12 @@ import java.util.*;
 import java.io.*;
 
 public class ItemsDaoFileBasedImpl implements ItemsDao{
+    static File file;
+
+    public ItemsDaoFileBasedImpl(File filePath) {
+        file = filePath;
+    }
+
     ArrayList<Item> readFromFile(){
         try {
             BufferedReader reader = new BufferedReader(new FileReader("D:/code/new.txt"));

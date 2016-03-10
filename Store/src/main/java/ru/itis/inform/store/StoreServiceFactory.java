@@ -18,7 +18,7 @@ public class StoreServiceFactory {
 
         try {
             properties.load(
-                    new FileInputStream("C:\\Users\\\u0410\u0434\u043c\u0438\u043d\\IdeaProjects\\Store\\src\\main\\resources"));
+                    new FileInputStream("C:\\Users\\\u0410\u0434\u043c\u0438\u043d\\IdeaProjects\\Store\\src\\main\\resources\\store.properties"));
 
             String storeServiceClass = properties.getProperty("storeService.class");
             String itemsDaoClass = properties.getProperty("itemsDao.class");

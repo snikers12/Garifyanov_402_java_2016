@@ -7,7 +7,11 @@ import java.io.*;
 import java.util.*;
 
 public class ItemsDaoTsvBasedImpl implements ItemsDao{
-    static File file = new File("D:/code/new.tsv");
+    static File file;
+
+    public ItemsDaoTsvBasedImpl(File tsvFilePath) {
+        file = tsvFilePath;
+    }
 
     public static List<String[]> parseFile(){
         TsvParserSettings settings = new TsvParserSettings();
@@ -20,7 +24,6 @@ public class ItemsDaoTsvBasedImpl implements ItemsDao{
         catch (FileNotFoundException e){
             throw new IllegalStateException();
         }
-        System.out.println(allRows);
         return allRows;
     }
 

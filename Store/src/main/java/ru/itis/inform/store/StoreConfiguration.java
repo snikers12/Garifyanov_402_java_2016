@@ -1,13 +1,10 @@
 package ru.itis.inform.store;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import ru.itis.inform.store.services.StoreService;
-import ru.itis.inform.store.services.StoreServiceImpl;
 
-@ComponentScan("ru.itis.inform.store.dao")
 @Configuration
+@ComponentScan("ru.itis.inform.store.dao")
 public class StoreConfiguration {
 //    Properties getProperties() {
 //        Properties properties = new Properties();
@@ -25,8 +22,8 @@ public class StoreConfiguration {
 //        return new ItemsDaoCsvBasedImpl(new File(getProperties().getProperty("csvFilepath")));
 //    }
 
-    @Bean
-    public StoreService storeService(){
-        return new StoreServiceImpl();
-    }
+//    @Bean
+//    public StoreService storeService(){
+//        return new StoreServiceImpl();
+//    }
 }

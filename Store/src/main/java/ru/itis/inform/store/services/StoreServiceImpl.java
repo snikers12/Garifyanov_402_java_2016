@@ -3,8 +3,10 @@ package ru.itis.inform.store.services;
 import org.apache.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.Service;
 import ru.itis.inform.store.dao.ItemsDao;
 
+@Service
 public class StoreServiceImpl implements StoreService {
 
     @Autowired

@@ -27,7 +27,8 @@ public class StoreServiceImplTest {
         doNothing().when(itemsDao).delete("Tovar");
         doThrow(new IllegalArgumentException()).when(itemsDao).select(anyString());
         doReturn(new Item("Tovar")).when(itemsDao).select("Tovar");
-        testedStoreService = new StoreServiceImpl(itemsDao);
+        testedStoreService = new StoreServiceImpl();
+        testedStoreService.setItemsDao(itemsDao);
     }
 
     // Проверяем, корректно ли прошло выполнение метода buy при входном значении Tovar

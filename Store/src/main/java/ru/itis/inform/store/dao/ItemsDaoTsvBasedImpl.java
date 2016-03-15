@@ -1,16 +1,28 @@
 package ru.itis.inform.store.dao;
 
 import com.univocity.parsers.tsv.*;
+import org.springframework.stereotype.Component;
 import ru.itis.inform.store.dao.models.Item;
 
 import java.io.*;
 import java.util.*;
 
+@Component
 public class ItemsDaoTsvBasedImpl implements ItemsDao{
-    static File file;
+    static File file = new File(getProperties().getProperty("csvFilePath"));
 
-    public ItemsDaoTsvBasedImpl(File tsvFilePath) {
-        file = tsvFilePath;
+    public ItemsDaoTsvBasedImpl() {
+    }
+
+    static Properties getProperties() {
+        Properties properties = new Properties();
+        try {
+            properties.load(
+                    new FileInputStream("C:\\Users\\\u0410\u0434\u043c\u0438\u043d\\IdeaProjects\\Store\\src\\main\\resources\\store.properties"));
+        } catch (Exception ex) {
+            throw new IllegalArgumentException(ex);
+        }
+        return properties;
     }
 
     public static List<String[]> parseFile(){
